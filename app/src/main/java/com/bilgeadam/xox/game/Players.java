@@ -1,14 +1,24 @@
 package com.bilgeadam.xox.game;
 
-enum Players {
 
-    X(1),
-    O(2);
+import com.bilgeadam.xox.R;
 
-    private final int value;
+public enum Players {
 
-    Players(int value) {
+    X(1, R.drawable.x),
+    O(2, R.drawable.o);
+
+    private final int value, drawable;
+    private int currentTurn;
+
+    Players(int value, int drawable ) {
         this.value = value;
+        this.drawable = drawable;
+        currentTurn = 1;
+    }
+
+    public int getDrawable() {
+        return drawable;
     }
 
     protected int getValue(){
@@ -17,6 +27,14 @@ enum Players {
 
     Players getNextPlayer(){
         return this.ordinal() == X.ordinal() ? O : X;
+    }
+
+    protected void incrementTurn(){
+        this.currentTurn++;
+    }
+
+    public int getCurrentTurn() {
+        return currentTurn;
     }
 
     /**

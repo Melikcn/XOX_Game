@@ -1,8 +1,10 @@
 package com.bilgeadam.xox.animations;
 
+import android.graphics.ImageDecoder;
 import android.graphics.Rect;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 
 import java.util.Optional;
@@ -10,7 +12,7 @@ import java.util.Optional;
 public class Animations {
 
     private final static long DURATION = 500;
-    private final static  float ALPHA = 0.27F;
+    private final static  float ALPHA = 0.15F;
 
     /**
      * Rotates given text 360 degree for each 100 ms.
@@ -53,5 +55,22 @@ public class Animations {
                 myButton.animate().translationYBy(bounds.bottom - buttonLocation[1]).setDuration(durationValue).alpha(ALPHA);
                 break;
         }
+    }
+
+    /**
+     * Puts given shape into the image
+     * @param image Image to be filled
+     * @param shape Shape of the given image
+     * @param duration Duration of the animation
+     */
+    public void dropDownImage(@NonNull ImageView image, int shape, Optional<Long> duration){
+        long durationValue = duration.orElse(DURATION);
+
+        //Setup initial condition
+        image.setImageResource(shape);
+        image.setTranslationY(-image.getHeight());
+        image.setAlpha(ALPHA);
+
+        image.animate().translationYBy(image.getHeight()).alpha(1.0F).setDuration(durationValue);
     }
 }

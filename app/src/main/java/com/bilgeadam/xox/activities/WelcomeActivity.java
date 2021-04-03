@@ -4,13 +4,11 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.bilgeadam.xox.R;
 import com.bilgeadam.xox.animations.Animations;
-import com.bilgeadam.xox.game.Logic;
+
 
 import java.util.Optional;
 
