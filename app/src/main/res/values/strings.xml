@@ -5,6 +5,6 @@
     <string name="current_player">Current Player iş %s</string>
     <string name="current_turn">Current Turn is %d</string>
     <string name="game_draw">Game ended in a draw</string>
-    <string name="game_finish">%s won the game</string>
+    <string name="game_finish">%s won the game with score %.4f</string>
 
 </resources>
